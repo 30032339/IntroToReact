@@ -8,18 +8,90 @@
     <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js" integrity="sha512-kp7YHLxuJDJcOzStgd6vtpxr4ZU9kjn77e6dBsivSz+pUuAuMlE2UTdKB7jjsWT84qbS8kdCWHPETnP/ctrFsA==" crossorigin="anonymous"></script>
+
+    <style>
+        .red {color: red;}
+        .blue {color: blue;}
+        .green {color: green;}
+    </style>
+
 </head>
 <body>
     <div id="root"></div>
 
     <script type="text/babel">
-    
-    ReactDOM.render(
-        <h1>Intro to REACT</h1>,
-        document.getElementById("root")
-    );
+        const display = document.getElementById("root");
 
+        class Header extends React.Component{
+            render(){
+                return <h1 className="red">Heading Component</h1>;
+            }
+        }
+
+        class Content extends React.Component{
+            render(){
+                return <p className="blue">Content Component</p>;
+            }
+        }
+        class Footer extends React.Component{
+            render(){
+                return <h2 className="green">Footer Component</h2>;
+            }
+        }
+
+
+
+        ReactDOM.render(
+
+        <div>
+            <Header/>
+            <Content/>
+            <Footer/>
+        </div>
+            ,display
+        );
     </script>
+
+
+    <!-- <script type="text/babel">
+    
+        class Header extends React.Component {
+            render()
+            {
+                return <h1> This is Header Component </h1>
+            }
+        }
+        class Content extends React.Component {
+            render()
+            {
+                return <h1> This is pragarph of text demostreting out content component. </h1>
+            }
+        }
+        class Footer extends React.Component {
+            render()
+            {
+                return <h2> This is our Footer component. </h2>
+            }
+        }
+        
+        // ReactDOM.render(
+            
+        //     <h1>Intro to REACT</h1>,
+        //     document.getElementById("root")
+        // );
+
+        ReactDOM.render(
+            <div>
+                <Header/>
+                <Content/>
+                <Footer/>
+            </div>
+            
+,
+            document.getElementById("root")
+        );
+
+    </script> -->
     
 </body>
 </html>
